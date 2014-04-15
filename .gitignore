@@ -106,6 +106,14 @@ set /p name=
 goto story
 
 :story
-echo Ahh welcome %name%.
+echo Rigna: Ahh welcome %name%.
 ping localhost -n 2.5 >nul
+echo Rigna: So who are you?
+echo 1) Are you an elf?
+echo 2) Are you a human?
+echo 3) Are you a dwarf?
+
+if %number% == 1 goto elf
+if %number% == 2 goto human
+if %number% == 3 goto dwarf
 
