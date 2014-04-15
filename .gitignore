@@ -107,4 +107,5 @@ goto story
 
 :story
 echo Ahh welcome %name%.
+ping localhost -n 2.5 >nul
 
