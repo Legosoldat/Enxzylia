@@ -1,4 +1,3 @@
-
 @echo off
 cls
 
@@ -102,13 +101,13 @@ ping localhost -n 1 >nul
 
 cls
 echo What's your name adventurer?
-set /p name=
+set /p name
 goto story
 
 :story
 echo Rigna: Ahh welcome %name%.
 ping localhost -n 2.5 >nul
-echo Rigna: So who are you?
+echo Rigna: So what are you?
 ping loclahost -n 1 >nul
 echo 1) Are you an elf?
 ping loclahost -n 1 >nul
