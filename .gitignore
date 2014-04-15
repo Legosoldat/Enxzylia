@@ -115,7 +115,7 @@ ping loclahost -n 1 >nul
 echo 2) Are you a human?
 ping loclahost -n 1 >nul
 echo 3) Are you a dwarf?
-set /p race=
+set /p number=
 goto test
 
 if %number% == 1 race= Elf
