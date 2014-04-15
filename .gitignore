@@ -101,10 +101,11 @@ ping localhost -n 1 >nul
 
 cls
 echo What's your name adventurer?
-set /p name
+set /p name=
 goto story
 
 :story
+cls
 echo Rigna: Ahh welcome %name%.
 ping localhost -n 2.5 >nul
 echo Rigna: So what are you?
@@ -114,6 +115,7 @@ ping loclahost -n 1 >nul
 echo 2) Are you a human?
 ping loclahost -n 1 >nul
 echo 3) Are you a dwarf?
+set /p number=
 goto test
 
 if %number% == 1 %race% = 1
