@@ -114,8 +114,12 @@ ping loclahost -n 1 >nul
 echo 2) Are you a human?
 ping loclahost -n 1 >nul
 echo 3) Are you a dwarf?
+goto test
 
-if %number% == 1 goto elf
-if %number% == 2 goto human
-if %number% == 3 goto dwarf
+if %number% == 1 %race% = 1
+if %number% == 2 %race% = 2
+if %number% == 3 %race% = 3
 
+:test
+echo %race%
+ping localhost -n 5 >nul
