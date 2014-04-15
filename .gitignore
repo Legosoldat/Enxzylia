@@ -73,6 +73,7 @@ ping localhost -n 1 >nul
 cls
 echo What's your name adventurer
 ping localhost -n 1 >nul
+cls
 echo What's your name adventurer?
 set /p name=
 goto story
