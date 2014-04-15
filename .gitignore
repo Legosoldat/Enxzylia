@@ -123,6 +123,5 @@ REM if %number% == 2 %race% = Human
 REM if %number% == 3 %race% = Dwarf
 
 :test
-@echo on
 echo %race%
 ping localhost -n 5 >nul
