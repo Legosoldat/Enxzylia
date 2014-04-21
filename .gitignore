@@ -1,6 +1,11 @@
 @echo off
 cls
-
+echo              0000000000000000000000000000000000000000000000000000000000000000000000000000000000
+echo              0                                                                                0
+echo              0                                                                                0
+echo              0                                                                                0
+echo              0                                                                                0
+echo              0                                                                                0
 title Enxzylia
 color 0f
 
