@@ -1,5 +1,30 @@
 @echo off
 cls
+color 0a
+:title
+echo.
+echo              00000000000000000000000000000000000000000000000000000
+echo              0                                                   0
+echo              0 EEEE NN    N X   X ZZZZZ Y   Y L      I     A     0
+echo              0 E    N N   N  X X     Z   Y Y  L      I    A A    0
+echo              0 EE   N  N  N   X     Z     Y   L      I   A   A   0
+echo              0 E    N   N N  X X   Z      Y   L      I  AAAAAAA  0    
+echo              0 EEEE N    NN X   X ZZZZZ   Y   LLLLLL I A       A 0
+echo              0                                                   0
+echo              00000000000000000000000000000000000000000000000000000
+echo.
+echo                           Press S to start the game
+echo.
+echo.
+echo.
+echo                                 GAMINGSTUDIO
+echo                                  2014-2014
+set /p start=
+
+if %start% == s goto start
+if %start% == S goto start
+
+:start
 title Enxzylia
 color 0f
 
