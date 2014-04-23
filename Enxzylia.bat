@@ -21,8 +21,29 @@ echo                                 GAMINGSTUDIO
 echo                                  2014-2014
 set /p start=
 
-if %start% == s goto start
-if %start% == S goto start
+if %start% == s goto menu
+if %start% == S goto menu
+
+:menu
+cls
+echo 1)Play
+echo 2)Options
+echo 3)Credits
+set /p number=
+
+if %number% == 1 goto saves
+
+:saves
+cls
+
+if exist save1.txt echo 1)Save 1
+if not exist save1.txt echo 1)Empty slot
+if exist save2.txt echo 2)Save 2
+if not exist save2.txt echo 2)Empty slot
+if exist save3.txt echo 3)Save 3
+if not exist save3.txt echo 3)Empty slot
+ 
+ping localhost -n 5 >nul
 
 :start
 title Enxzylia
