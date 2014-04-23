@@ -1,6 +1,25 @@
 @echo off
 cls
 color 0a
+
+rem set varnamn=name
+rem set varvalue=AffeBaffe
+
+rem set %varnamn%=%varvalue%
+
+rem set varnamn=race
+rem set varvalue=Elf
+
+rem set %varnamn%=%varvalue%
+
+(
+set /p name=
+set /p race=
+set /p slot1=
+set /p slot2=
+set /p slot3=
+)<save1.txt
+
 :title
 echo.
 echo              00000000000000000000000000000000000000000000000000000
@@ -42,7 +61,8 @@ if exist save2.txt echo 2)Save 2
 if not exist save2.txt echo 2)Empty slot
 if exist save3.txt echo 3)Save 3
 if not exist save3.txt echo 3)Empty slot
- 
+set /p saveslot=
+
 ping localhost -n 5 >nul
 
 :start
@@ -147,9 +167,10 @@ ping localhost -n 1 >nul
 cls
 echo What's your name adventurer?
 set /p name=
-goto story
+echo %name% >> save%saveslot%.txt
+goto race
 
-:story
+:race
 cls
 echo Rigna: Ahh welcome %name%.
 ping localhost -n 2.5 >nul
@@ -165,6 +186,7 @@ set /p number=
 if %number% == 1 set race=Elf
 if %number% == 2 set race=Human
 if %number% == 3 set race=Dwarf
+echo %race% >> save%saveslot%.txt
 goto test
 
 :test
