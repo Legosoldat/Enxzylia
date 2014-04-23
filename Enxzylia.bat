@@ -140,11 +140,11 @@ echo 2) Are you a human?
 ping loclahost -n 1 >nul
 echo 3) Are you a dwarf?
 set /p number=
-goto test
 
-if %number% == 1 race= Elf
-if %number% == 2 race= Human
-if %number% == 3 race= Dwarf
+if %number% == 1 set race=Elf
+if %number% == 2 set race=Human
+if %number% == 3 set race=Dwarf
+goto test
 
 :test
 echo %race%
