@@ -2,24 +2,6 @@
 cls
 color 20
 
-rem set varnamn=name
-rem set varvalue=AffeBaffe
-
-rem set %varnamn%=%varvalue%
-
-rem set varnamn=race
-rem set varvalue=Elf
-
-rem set %varnamn%=%varvalue%
-
-(
-set /p name=
-set /p race=
-set /p slot1=
-set /p slot2=
-set /p slot3=
-)<save1.txt
-
 :title
 echo.
 echo              00000000000000000000000000000000000000000000000000000
@@ -55,12 +37,24 @@ if %number% == 1 goto saves
 :saves
 cls
 
-if exist save1.txt echo 1)Save 1
+(
+set /p name1=
+)<save1.txt
+if exist save1.txt echo 1)Continue as %name1%
 if not exist save1.txt echo 1)Empty slot
-if exist save2.txt echo 2)Save 2
+
+(
+set /p name2=
+)<save2.txt
+if exist save2.txt echo 2)Continue as %name2%
 if not exist save2.txt echo 2)Empty slot
-if exist save3.txt echo 3)Save 3
+
+(
+set /p name3=
+)<save3.txt
+if exist save3.txt echo 3)Continue as %name3%
 if not exist save3.txt echo 3)Empty slot
+
 set /p saveslot=
 
 ping localhost -n 5 >nul
