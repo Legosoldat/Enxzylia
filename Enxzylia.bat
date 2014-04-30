@@ -1,6 +1,6 @@
 @echo off
 cls
-color af
+color 20
 
 rem set varnamn=name
 rem set varvalue=AffeBaffe
