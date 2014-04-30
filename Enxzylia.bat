@@ -57,7 +57,7 @@ if not exist save3.txt echo 3)Empty slot
 
 set /p saveslot=
 
-ping localhost -n 5 >nul
+ping localhost -n 2.5 >nul
 
 :start
 title Enxzylia
@@ -169,20 +169,33 @@ cls
 echo Rigna: Ahh welcome %name%.
 ping localhost -n 2.5 >nul
 echo Rigna: So what are you?
-ping loclahost -n 1 >nul
-echo 1) Are you an elf?
-ping loclahost -n 1 >nul
-echo 2) Are you a human?
-ping loclahost -n 1 >nul
-echo 3) Are you a dwarf?
-set /p number=
+set /p race=
 
-if %number% == 1 set race=Elf
-if %number% == 2 set race=Human
-if %number% == 3 set race=Dwarf
+if %race% == Elf set destination=Elf1
+if %race% == elf set destination=Elf1
+
+if %race% == Human set destination=Human1
+if %race% == human set destination=Human1
+
+if %race% == Dwarf set destination=Dwarf1
+if %race% == dwarf set destination=Dwarf1
 echo %race% >> save%saveslot%.txt
-goto test
+cls
+goto %destination%
 
-:test
-echo %race%
-ping localhost -n 5 >nul
+:Elf1
+echo Elf is W.I.P.
+ping localhost -n 3 >nul
+goto End
+
+:Human1 
+echo Human is W.I.P.
+ping localhost -n 3 >nul
+goto End
+
+:Dwarf1
+echo Dwarf is W.I.P.
+ping localhost -n 3 >nul
+goto End
+
+:End
