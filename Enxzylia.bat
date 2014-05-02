@@ -37,22 +37,16 @@ if %number% == 1 goto saves
 :saves
 cls
 
-(
-set /p name1=
-)<save1.txt
+if exist save1.txt ( set /p name1= )<save1.txt
 if exist save1.txt echo 1)Continue as %name1%
 if not exist save1.txt echo 1)Empty slot
 
-(
-set /p name2=
-)<save2.txt
+if exist save2.txt ( set /p name2= )<save2.txt
 if exist save2.txt echo 2)Continue as %name2%
 if not exist save2.txt echo 2)Empty slot
 
-(
-set /p name3=
-)<save3.txt
-if exist save3.txt echo 3)Continue as %name3%
+if exist save3.txt ( set /p name3= )<save3.txt
+if exist save3.txt echo 3^)Continue as %name3%
 if not exist save3.txt echo 3)Empty slot
 
 set /p saveslot=
@@ -184,18 +178,30 @@ cls
 goto %destination%
 
 :Elf1
-echo Elf is W.I.P.
+echo Rigna:A protector of the woods I see.
 ping localhost -n 3 >nul
-goto End
+goto weapon
 
 :Human1 
-echo Human is W.I.P.
+echo Rigna:One of us. Not exactly a surprise..
 ping localhost -n 3 >nul
-goto End
+goto weapon
 
 :Dwarf1
-echo Dwarf is W.I.P.
+echo Rigna:An underground citizen is'nt seen very often here.
 ping localhost -n 3 >nul
-goto End
+goto weapon
 
-:End
+:weapon
+echo Rigna:But I still wonder wich weapon you are most comfortable with.
+ping localhost -n 3 >nul
+echo Rigna:Right here I've got a willow bow, a silver tree wand and a oak sword.
+set /p weapon=
+
+if %weapon% == Bow set class=Archer
+if %weapon% == bow set class=Archer
+if %weapon% == Wand set class=Mage
+if %weapon% == wand set class=Mage
+if %weapon% == Sword set class=Warrior
+if %weapon% == sword set class=Warrior
+echo %class% >> save%saveslot%.txt
