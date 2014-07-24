@@ -53,6 +53,8 @@ set /p saveslot=
 
 ping localhost -n 2.5 >nul
 
+:load
+
 :start
 title Enxzylia
 color 0f
@@ -155,7 +157,7 @@ ping localhost -n 1 >nul
 cls
 echo What's your name adventurer?
 set /p name=
-echo %name% >> save%saveslot%.txt
+echo %name% >> save%saveslot%\Personally\Name.txt
 goto race
 
 :race
@@ -173,7 +175,7 @@ if %race% == human set destination=Human1
 
 if %race% == Dwarf set destination=Dwarf1
 if %race% == dwarf set destination=Dwarf1
-echo %race% >> save%saveslot%.txt
+echo %race% >> save%saveslot%\Personally\Race.txt
 cls
 goto %destination%
 
@@ -204,4 +206,25 @@ if %weapon% == Wand set class=Mage
 if %weapon% == wand set class=Mage
 if %weapon% == Sword set class=Warrior
 if %weapon% == sword set class=Warrior
-echo %class% >> save%saveslot%.txt
+echo %class% >> save%saveslot%\Personally\Class.txt
+cls
+goto %class%
+
+:Archer
+echo Rigna:Pick your enemies off one by one sounds good to me.
+ping localhost -n 3 >nul
+goto W.I.P.
+
+:Mage
+echo Rigna:Do you want to be a wise master of magic?
+ping localhost -n 3 >nul
+goto W.I.P.
+
+:Warrior
+echo Rigna:A soldier using his raw power.
+ping localhost -n 3 >nul
+goto W.I.P.
+
+:W.I.P.
+echo This game is W.I.P.
+ping localhost -n 5 >nul
